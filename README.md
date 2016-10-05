@@ -53,7 +53,7 @@ public void onDeeplink(string deeplink) {
 
 #### Example: Track Deeplinks with AppsFlyer
 * Tested with [AppsFlyer Unity SDK](https://support.appsflyer.com/hc/en-us/articles/213766183-Unity) v4.10.1
-* Also enables AppsFlyer's SDK to handle iOS Universal Links
+* Also enables AppsFlyer's SDK to handle iOS Universal Links (for AppsFlyer Unity SDK 4.10 or earlier)
 * Assuming you already integrated the [AppsFlyer Unity SDK](https://support.appsflyer.com/hc/en-us/articles/213766183-Unity), just implement `onAppOpenAttribution` in *AppsFlyerTrackerCallbacks.cs* as follows:
 ```cs
 public void onAppOpenAttribution(string validateResult) {
