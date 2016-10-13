@@ -149,21 +149,11 @@ This creates/updates a *UnityDeeplinks.jar* file under your Unity project's Asse
 ## iOS
 UnityDeeplinks implements a native plugin for iOS, initialized by *Assets/UnityDeeplinks/UnityDeeplinks.cs*. the plugin listens for URL/Univeral Link activations and relayes them to the Unity script for processing.
 
-* Ensure your XCode project's Info.plist file contains a custom URL scheme definiton or [Universal Links setup](https://developer.apple.com/library/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html). Here is an example of a custom URL scheme *myapp://* for the bundle ID *com.mycompany.myapp*:
-```xml
-<key>CFBundleURLTypes</key>
-<array>
-    <dict>
-        <key>CFBundleURLName</key>
-        <string>com.mycompany.myapp</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
-            <string>myapp</string>
-        </array>
-    </dict>
-</array>
-```
-*Note:* Custom URL scheme settings may be removed during Unity rebuilds. Ensure they are recreated if needed, by a post-build script, for example. Universal Link settings are not removed during Unity rebuilds.
+* To support URL schemes, go to your Unity project's Build => iOS Player Settings => Other Settings => Supported URL Schemes and set:
+ * Size: 1
+ * Element 0: your URL scheme, e.g. myapp
+
+* To support Universal Links, set them up as per [their specification](https://developer.apple.com/library/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html). *Note:* Universal Link settings in your XCode project are not removed during Unity rebuilds, unless you use the *Replace* option and overwrite your XCode project
 
 ## Testing
 
